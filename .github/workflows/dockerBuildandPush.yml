@@ -76,7 +76,7 @@ jobs:
       # Sends a slack notification to slack build channel on failure
       - name: Report Status
         if: endsWith(GitHub.ref, 'main') && failure()
-        uses: ravsamhq/notify-slack-action@v1
+        uses: submittable/notify-slack-action@v1
         with:
           status: ${{ job.status }}
           notify_when: 'failure'
@@ -86,7 +86,7 @@ jobs:
       # Sends a slack notification to slack build channel
       - name: Slack Notification
         if: endsWith(GitHub.ref, 'main') && success()
-        uses: rtCamp/action-slack-notify@v2.2.0
+        uses: submittable/action-slack-notify@v2.2.0
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_MESSAGE: Job for Release ${{ steps.tag_version.outputs.new_tag }} completed successfully.
