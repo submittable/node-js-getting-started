@@ -78,7 +78,7 @@ jobs:
         if: endsWith(GitHub.ref, 'main') && failure()
         uses: submittable/notify-slack-action@v1
         with:
-          footer: 'Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>'
+          footer: 'Linked Repo <{repo_url}|{repo}> | <{workflow_url}|{workflow_id}>'
           status: ${{ job.status }}
           notify_when: 'failure'
         env:
