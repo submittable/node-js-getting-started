@@ -85,10 +85,15 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
 
       # Sends a slack notification to slack build channel
-      - name: Slack Notification - Success
-        if: endsWith(GitHub.ref, 'main') && success()
-        uses: submittable/action-slack-notify@v2.2.0
+      - name: Send GitHub Action trigger data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.14.0
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: Job for Release ${{ steps.tag_version.outputs.new_tag }} completed successfully.
-          SLACK_FOOTER: Powered By Submittable GitHub Actions Library
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #- name: Slack Notification - Success
+        #if: endsWith(GitHub.ref, 'main') && success()
+        #uses: submittable/action-slack-notify@v2.2.0
+        #env:
+          #SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          #SLACK_MESSAGE: Job for Release ${{ steps.tag_version.outputs.new_tag }} completed successfully.
+          #SLACK_FOOTER: Powered By Submittable GitHub Actions Library
