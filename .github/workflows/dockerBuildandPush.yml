@@ -90,3 +90,4 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_MESSAGE: Job for Release ${{ steps.tag_version.outputs.new_tag }} completed successfully.
+          SLACK_FOOTER: Powered By Submittable GitHub Actions Library
