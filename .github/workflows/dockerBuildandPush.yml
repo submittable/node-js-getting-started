@@ -74,17 +74,18 @@ jobs:
           body: ${{ steps.tag_version.outputs.changelog }}
 
       # Sends a slack notification to slack build channel on failure
-      - name: Report Status
+      - name: Slack Notification - Failure
         if: endsWith(GitHub.ref, 'main') && failure()
         uses: submittable/notify-slack-action@v1
         with:
+          footer: 'Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>'
           status: ${{ job.status }}
           notify_when: 'failure'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
 
       # Sends a slack notification to slack build channel
-      - name: Slack Notification
+      - name: Slack Notification - Success
         if: endsWith(GitHub.ref, 'main') && success()
         uses: submittable/action-slack-notify@v2.2.0
         env:
