@@ -13,7 +13,7 @@ jobs:
   
   #Build and Run tests
   test:
-      uses: submittable/github-actions/.github/workflows/nodejs-ut-ci.yml@2487-self-hosted-runners
+      uses: submittable/github-actions/.github/workflows/nodejs-ut-ci.yml@main
       secrets:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
