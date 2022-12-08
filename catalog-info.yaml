@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: node-js-getting-started
+  description: Getting Started with Node on Heroku.
+  annotations:
+    github.com/project-slug: submittable/node-js-getting-started
+  tags: []
+spec:
+  type: service
+  owner: unassigned
+  lifecycle: experimental
+  
