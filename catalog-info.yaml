@@ -1,10 +1,12 @@
+# DO NOT EDIT - Source of this data is https://github.com/submittable/software-catalog-automation/blob/main/src/owners.json
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: node-js-getting-started
   description: "Getting Started with Node on Heroku."
-  annotations:
+  annotations: 
     github.com/project-slug: submittable/node-js-getting-started
+    
   tags: []
 spec:
   type: service
