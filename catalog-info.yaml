@@ -4,7 +4,7 @@ kind: Component
 metadata:
   name: node-js-getting-started
   description: "Getting Started with Node on Heroku."
-  annotations: 
+  annotations:
     github.com/project-slug: submittable/node-js-getting-started
     
   tags: []
